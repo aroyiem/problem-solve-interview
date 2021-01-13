@@ -19,9 +19,9 @@ public class CalculateTest extends TestCase {
         Assert.assertEquals(4.0d, calculateSquare.getArea());
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
     public void testCalculateAreaForSquare_nullobject() {
         Calculate calculateSquare = new CalculateForSquare(null);
-        Assert.assertNull(calculateSquare.getArea());
+        Double area = calculateSquare.getArea();
     }
 }

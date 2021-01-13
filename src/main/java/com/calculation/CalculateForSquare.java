@@ -13,26 +13,28 @@ public class CalculateForSquare implements Calculate {
     @Override
     public Double getArea() {
         if(null == square)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return square.getLength() * square.getLength();
     }
 
     @Override
     public Double getTotalDistance() {
         if(null == square)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return square.getLength() * 4;
     }
 
     @Override
     public Integer getNumberOfSides() {
         if(null == square)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return 4;
     }
 
     @Override
     public String getOtherAttributes() {
+        if(null == square)
+            throw new RuntimeException("Incomplete information");
         return null;
     }
 }

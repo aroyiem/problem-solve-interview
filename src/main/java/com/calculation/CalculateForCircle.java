@@ -13,26 +13,28 @@ public class CalculateForCircle implements Calculate {
     @Override
     public Double getArea() {
         if(null == circle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return circle.getRadius() * circle.getRadius()  * Math.PI;
     }
 
     @Override
     public Double getTotalDistance() {
         if(null == circle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return 2 * circle.getRadius() * Math.PI;
     }
 
     @Override
     public Integer getNumberOfSides() {
         if(null == circle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return 1;
     }
 
     @Override
     public String getOtherAttributes() {
+        if(null == circle)
+            throw new RuntimeException("Incomplete information");
         return "Diameter";
     }
 }

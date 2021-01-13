@@ -13,26 +13,28 @@ public class CalculateForRectangle implements Calculate{
     @Override
     public Double getArea() {
         if(null == rectangle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return rectangle.getLength() * rectangle.getBreadth();
     }
 
     @Override
     public Double getTotalDistance() {
         if(null == rectangle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return (rectangle.getLength() * 2) + (rectangle.getBreadth() * 2);
     }
 
     @Override
     public Integer getNumberOfSides() {
         if(null == rectangle)
-            return null;
+            throw new RuntimeException("Incomplete information");
         return 4;
     }
 
     @Override
     public String getOtherAttributes() {
+        if(null == rectangle)
+            throw new RuntimeException("Incomplete information");
         return null;
     }
 }
