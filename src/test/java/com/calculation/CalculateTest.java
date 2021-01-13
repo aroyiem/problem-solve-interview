@@ -3,7 +3,6 @@ package com.calculation;
 
 import com.model.Square;
 import junit.framework.Assert;
-import junit.framework.AssertionFailedError;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -20,7 +19,7 @@ public class CalculateTest extends TestCase {
         Assert.assertEquals(4.0d, calculateSquare.getArea());
     }
 
-    @Test(expected = AssertionFailedError.class)
+    @Test
     public void testCalculateAreaForSquare_nullobject() {
         Calculate calculateSquare = new CalculateForSquare(null);
         Assert.assertNull(calculateSquare.getArea());
